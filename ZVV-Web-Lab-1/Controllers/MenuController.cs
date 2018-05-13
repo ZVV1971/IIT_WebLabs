@@ -20,8 +20,9 @@ namespace ZVV_Web_Lab_1.Controllers
             };
         }
 
-        public PartialViewResult Main()
+        public PartialViewResult Main(string a = "Index", string c = "Home")
         {
+            items.First(m => m.Controller == c).Active = "active";
             return PartialView(items);
         }
 
@@ -33,7 +34,9 @@ namespace ZVV_Web_Lab_1.Controllers
         public string Side()
         { return "<span>Боковая панель</span>"; }
 
-        public string Map()
-        { return "<span>Карта сайта</span>"; }
+        public PartialViewResult Map()
+        {
+            return PartialView(items);
+        }
     }
 }

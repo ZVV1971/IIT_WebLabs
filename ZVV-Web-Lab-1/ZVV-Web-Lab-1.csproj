@@ -197,6 +197,7 @@
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Menu\UserInfo.cshtml" />
     <Content Include="Views\Menu\Main.cshtml" />
+    <Content Include="Views\Menu\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
