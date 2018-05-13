@@ -27,5 +27,10 @@ namespace ZVV_Web_Lab_1
             kernel.Bind<IRepository<LabGlassware>>().To<FakeRepository>();
             return kernel;
         }
+
+        private void RegisterServices(IKernel kernel)
+        {
+            // e.g. kernel.Load(Assembly.GetExecutingAssembly());
+        }
     }
 }

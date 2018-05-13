@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using DAL_ZVV.Entities;
 using DAL_ZVV.Interfaces;
+using DAL_ZVV.Repositories;
 
 namespace ZVV_Web_Lab_1.Controllers
 {
@@ -15,6 +16,7 @@ namespace ZVV_Web_Lab_1.Controllers
 
         public GWController()
         {
+            repository = new FakeRepository();
         }
 
         public ActionResult List()
