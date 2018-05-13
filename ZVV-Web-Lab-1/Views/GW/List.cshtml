@@ -29,32 +29,34 @@
     @foreach (var item in Model)
     {
     <li>
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GW_MIMEType)
-            </td>
-            @*<td>
+        <table class="table">
+
+            <tr>
+                <td class="table-responsive">
+                    @Html.DisplayFor(modelItem => item.GW_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GW_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GW_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GW_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GW_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GW_MIMEType)
+                </td>
+                @*<td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>*@
-        </tr>
+            </tr>
+        </table>
     </li>
     }
 </ul>
-</table>

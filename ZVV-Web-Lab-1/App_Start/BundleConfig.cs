@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace ZVV_Web_Lab_1
 {
@@ -25,7 +24,8 @@ namespace ZVV_Web_Lab_1
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/ZVVStyle.css"));
         }
     }
 }
