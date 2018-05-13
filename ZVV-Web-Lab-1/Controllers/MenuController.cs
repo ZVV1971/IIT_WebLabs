@@ -15,7 +15,7 @@ namespace ZVV_Web_Lab_1.Controllers
         {
             items = new List<MenuItem> {
                 new MenuItem { Name = "Домой", Controller = "Home", Action = "Index", Active = string.Empty },
-                new MenuItem { Name = "Каталог", Controller = "Product", Action = "List", Active = string.Empty },
+                new MenuItem { Name = "Каталог", Controller = "GW", Action = "List", Active = string.Empty },
                 new MenuItem { Name = "Администрирование", Controller = "Admin", Action = "Index", Active = string.Empty }
             };
         }

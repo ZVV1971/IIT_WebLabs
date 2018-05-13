@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DAL_ZVV.Entities.LabGlassware>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_MIMEType)
+        </th>
+        <th></th>
+    </tr>*@
+<ul>
+    @foreach (var item in Model)
+    {
+    <li>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GW_MIMEType)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    </li>
+    }
+</ul>
+</table>

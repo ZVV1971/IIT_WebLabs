@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GWController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Views\Menu\UserInfo.cshtml" />
     <Content Include="Views\Menu\Main.cshtml" />
     <Content Include="Views\Menu\Map.cshtml" />
+    <Content Include="Views\GW\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -220,6 +222,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL-ZVV\DAL-ZVV.csproj">
+      <Project>{7ec21c8e-a9e4-47db-bde8-d225361fd545}</Project>
+      <Name>DAL-ZVV</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
