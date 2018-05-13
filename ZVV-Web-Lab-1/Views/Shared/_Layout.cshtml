@@ -40,10 +40,13 @@
                 </div>
             </div>
             <div class="row">
+
                 <! --Левая боковая панель-->
                 <div class="col-md-3">
-                    @Html.Action("Side", "Menu")
+                    @RenderSection("SidePanel", required: false)
+                    @*@Html.Action("Side", "Menu")*@
                 </div>
+
                 <! --/Левая боковая панель (конец) -->
                 <! --Основная панель-->
                 <div class="col-md-9">
