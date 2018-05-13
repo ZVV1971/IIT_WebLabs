@@ -12,19 +12,7 @@
     <div class="header-strip">
         <! --Панель аутентификации-->
         <div class="container">
-            <div class="nav navbar-left">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-user"></span>Войти
-                </a>
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus-sign"></span>Зарегистрироваться
-                </a>
-            </div>
-            <div class="nav navbar-right">
-                <a href="#">
-                    0.00 руб. ( 0 ) <span class="glyphicon glyphiconshopping-cart"></span>
-                </a>
-            </div>
+            @Html.Action("UserInfo", "Menu")
         </div>
         <! --Панель аутентификации (конец) -->
     </div>
@@ -36,15 +24,12 @@
                 <div class="logo">
                     <a class="navbar-brand" href="#">Zakharenkov</a>
                 </div>
-                <ul class="nav nav-pills">
-                    <li>@Html.ActionLink("Главная","Index","Home")</li>
-                    <li>@Html.ActionLink("Каталог", "List", "Product")</li>
-                    <li>@Html.ActionLink("Администрирование", "Index", "Admin")</li>
-                </ul>
+                @Html.Action("Main", "Menu")
             </div>
         </div><! --панель навигации (конец) -->
     </div>
     <! --Заголовок страницы(конец) -->
+
     <div class="main-body">
         <div class="container">
             <div class="row">
@@ -55,14 +40,7 @@
             <div class="row">
                 <! --Левая боковая панель-->
                 <div class="col-md-3">
-                    <div class="navbar navbar-default">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Все категории</a></li>
-                            <li class="active"><a href="#">Кино</a></li>
-                            <li><a href="#">Книги</a></li>
-                            <li><a href="#">Инструмент</a></li>
-                        </ul>
-                    </div>
+                    @Html.Action("Side", "Menu")
                 </div>
                 <! --/Левая боковая панель (конец) -->
                 <! --Основная панель-->
@@ -78,14 +56,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h6>Kарта сайта</h6>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li class="active">
-                            <a href="#">Каталог</a>
-                        </li>
-                        <li><a href="#">Администрирование</a></li>
-                    </ul>
+                    @Html.Action("Map", "Menu")
                 </div>
                 <div class="col-md-3 col-md-offset-6">
                     <h6>Социальные сети</h6>
