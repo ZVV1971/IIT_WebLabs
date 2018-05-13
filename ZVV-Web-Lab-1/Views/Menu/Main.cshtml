@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ZVV_Web_Lab_1.Models.MenuItem>
+
+<ul class="nav nav-pills">
+    @foreach (var item in Model)
+    {
+        <li class="@item.Active">
+            @Html.ActionLink(item.Name, item.Action, (string)item.Controller)
+        </li>
+    }
+</ul>
