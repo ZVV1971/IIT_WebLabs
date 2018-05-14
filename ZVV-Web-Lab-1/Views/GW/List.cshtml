@@ -28,12 +28,13 @@
 <ul>
     @foreach (var item in Model)
     {
+        //@Html.Partial("ItemViewPartial", item)
     <li>
         <table class="table">
-
+            
             <tr>
                 <td class="table-responsive">
-                    @Html.DisplayFor(modelItem => item.GW_ID)
+                    @Html.HiddenFor(modelItem => item.GW_ID)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.GW_Name)
