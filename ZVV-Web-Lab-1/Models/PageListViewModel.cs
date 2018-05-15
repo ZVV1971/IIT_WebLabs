@@ -25,7 +25,7 @@ namespace ZVV_Web_Lab_1.Models
         /// <param name="current">номер текущей страницы</param>
         private PageListViewModel(List<T> items, int total, int current)
         {
-            this.AddRange(items);
+            AddRange(items);
             TotalPages = total;
             CurrentPage = current;
         }

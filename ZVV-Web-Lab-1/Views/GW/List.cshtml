@@ -1,22 +1,8 @@
-﻿@model IEnumerable<DAL_ZVV.Entities.LabGlassware>
+﻿@using ZVV_Web_Lab_1.Models
+@using DAL_ZVV.Entities
 @using System.Text;
 
-@*My version much clumsier but much shorter anyway*@
-@*@foreach (var item in Model)
-{
-    int i = Model.ToList().IndexOf(item);
-    int j = Model.ToList().Count;
-    if (i % 3 == 0)
-    {
-        @MvcHtmlString.Create("<div class=\"row\">")
-    }
-    @Html.Partial("ItemViewPartial", item);
-    if ((i != 0 && (i % 3 == 2)) || i == j)
-    {
-        @MvcHtmlString.Create("</div>")
-    }
-}*@
-
+@model PageListViewModel<LabGlassware>
 
 @{
     // объект для "собирания" разметки
@@ -24,7 +10,7 @@
     // счетчик эскизов в строке
     var i = 0;
     TagBuilder row = new TagBuilder("div");
-    foreach (var item in Model)
+    foreach (LabGlassware item in Model)
     {
 
         if (i % 3 == 0) // для первого элемента в строке создаем новую строку
@@ -54,3 +40,4 @@
 }
 <!-- Получить готовую разметку -->
 @MvcHtmlString.Create(result.ToString())
+@Html.Partial("PagerPartialView",Model)
