@@ -25,7 +25,9 @@ namespace DAL_ZVV.Repositories
             new LabGlassware {GW_ID=5, GW_Name="Бюретка 50мл",
                             GW_Description="Цена деления 0,1 мл", GW_Type = "Бюретка", GW_Price = 22},
             new LabGlassware {GW_ID=6, GW_Name="Бюретка 20мл",
-                            GW_Description="Цена деления 0,05 мл", GW_Type = "Бюретка", GW_Price = 33}
+                            GW_Description="Цена деления 0,05 мл", GW_Type = "Бюретка", GW_Price = 33},
+            new LabGlassware {GW_ID=7, GW_Name="Test GW",
+                            GW_Description="No description", GW_Type = "Test", GW_Price = 0}
             };
         }
 

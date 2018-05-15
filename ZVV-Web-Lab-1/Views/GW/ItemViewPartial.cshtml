@@ -1,16 +1,43 @@
 ﻿@model DAL_ZVV.Entities.LabGlassware
 
-<div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-        <img src="..." alt="...">
+@*<div class="col-sm-6 col-md-4">
+    <div class="thumbnail display-flex">
+        <img height="200" resource='#' alt='NoImage' />
         <p>@Html.HiddenFor(model => model.GW_ID)</p>
-        <div class="caption">
+        <div class="item-name">
             <h3>@Html.DisplayFor(model => model.GW_Name)</h3>
-            <p>@Html.DisplayFor(model => model.GW_Description)</p>
         </div>
-        <div class="label label-default">
+        <div class="item-description">
+            @Html.DisplayFor(model => model.GW_Description)
+        </div>
+        <div class="centered label label-default">
             @Html.DisplayFor(model => model.GW_Price)
         </div>
         <span class="v_align_fix"></span>
+    </div>
+</div>*@
+
+
+<div class='col-md-4'>
+    <div class='thumbnail'>
+        <img height="200" resource='#' alt='NoImage' />
+        <div class="caption">
+            <div class="item-name">
+                <h3>@Model.GW_Name</h3>
+            </div>
+            <div class="item-description">
+                @Model.GW_Description
+            </div>
+            <div class="centered">
+                <h3 class="badge">@Model.GW_Price</h3>
+            </div>
+            <div class="centered">
+                <a href="#" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-shoppingcart">
+                    </span>
+                    В корзину
+                </a>
+            </div>
+        </div>
     </div>
 </div>
