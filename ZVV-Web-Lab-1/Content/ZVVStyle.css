@@ -1,4 +1,12 @@
-﻿
+﻿.v_align_fix 
+{
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    width: 0px;
+    white-space: nowrap;
+}
+
 .header-strip
 {
     background-color: #222222;

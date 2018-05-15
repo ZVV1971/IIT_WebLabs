@@ -1,6 +1,16 @@
 ﻿@model IEnumerable<DAL_ZVV.Entities.LabGlassware>
 
-    @foreach (var item in Model)
+@foreach (var item in Model)
+{
+    int i = Model.ToList().IndexOf(item);
+    int j = Model.ToList().Count;
+    if (i % 3 == 0)
     {
-        @Html.Partial("ItemViewPartial", item)
+        @MvcHtmlString.Create("<div class=\"row\">")
     }
+    @Html.Partial("ItemViewPartial", item);
+    if ((i != 0 && (i % 3 == 2)) || i == j)
+    {
+        @MvcHtmlString.Create("</div>")
+    }
+}
