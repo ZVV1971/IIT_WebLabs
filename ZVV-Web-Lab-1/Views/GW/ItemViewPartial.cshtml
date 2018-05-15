@@ -4,9 +4,13 @@
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <img src="..." alt="...">
+            <p>@Html.HiddenFor(model => model.GW_ID)</p>
             <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
+                <h3>@Html.DisplayFor(model => model.GW_Name)</h3>
+                <p>@Html.DisplayFor(model => model.GW_Description)</p>
+            </div>
+            <div class="jumbotron">
+                @Html.DisplayFor(model => model.GW_Price)
             </div>
         </div>
     </div>
