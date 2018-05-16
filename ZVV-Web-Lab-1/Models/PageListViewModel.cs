@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace ZVV_Web_Lab_1.Models
 {
@@ -46,7 +45,7 @@ namespace ZVV_Web_Lab_1.Models
                 .Skip(pageSize * (current - 1))
                 .Take(pageSize)
                 .ToList();
-            return new PageListViewModel<T>(list.ToList<T>(), pagesCount, current);
+            return new PageListViewModel<T>(list.ToList(), pagesCount, current);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ZVV_Web_Lab_1
         protected override IKernel CreateKernel()
         {
             IKernel kernel = new StandardKernel();
-            kernel.Bind<IRepository<LabGlassware>>().To<FakeRepository>();
+            kernel.Bind<IRepository<LabGlassware>>().To<EFLabGWRepository>();
             return kernel;
         }
 
