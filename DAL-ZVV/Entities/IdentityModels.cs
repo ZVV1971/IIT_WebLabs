@@ -20,9 +20,15 @@ namespace DAL_ZVV.Entities
     public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection",
+                  throwIfV1Schema: false)
         {
             Populate();
+        }
+
+        public ApplicationDbContext(string connectionString)
+        {
+
         }
 
         public static ApplicationDbContext Create()
