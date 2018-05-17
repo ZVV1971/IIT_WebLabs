@@ -6,8 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using DAL_ZVV.Entities;
+using ZVV_Web_Lab_1.App_Start;
 
-namespace ZVV_Web_Lab_1.App_Start
+namespace ZVV_Web_Lab_1
 {
     public partial class Startup
     {

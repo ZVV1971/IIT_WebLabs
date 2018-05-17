@@ -6,6 +6,7 @@ using Ninject.Web.Common.WebHost;
 using DAL_ZVV.Repositories;
 using DAL_ZVV.Interfaces;
 using DAL_ZVV.Entities;
+using System.Reflection;
 
 namespace ZVV_Web_Lab_1
 {
@@ -30,7 +31,7 @@ namespace ZVV_Web_Lab_1
 
         private void RegisterServices(IKernel kernel)
         {
-            // e.g. kernel.Load(Assembly.GetExecutingAssembly());
+            kernel.Load(Assembly.GetExecutingAssembly());
         }
     }
 }
