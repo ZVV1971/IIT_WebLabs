@@ -6,6 +6,8 @@ namespace DAL_ZVV.Entities
     public class LabGlassware
     {
         [HiddenInput]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int GW_ID { get; set; }
 
         [Required(AllowEmptyStrings =false, ErrorMessage = "Наименование обязательное поле!")]

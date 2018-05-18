@@ -47,9 +47,9 @@ namespace DAL_ZVV.Repositories
             return table;
         }
 
-        public Task<LabGlassware> GetAsync(int id)
+        public async Task<LabGlassware> GetAsync(int id)
         {
-            return table.FindAsync(id);
+            return await table.FindAsync(id);
         }
 
         public void Update(LabGlassware t)
