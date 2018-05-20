@@ -39,4 +39,8 @@
 }
 <!-- Получить готовую разметку -->
 @MvcHtmlString.Create(result.ToString())
-@Html.Partial("PagerPartialView",Model)
+@Html.Partial("PagerPartialView", Model)
+@section SidePanel { 
+    @Html.Action("Side", "Menu")
+        } 
+@*@section Styles{ @Scripts.Render("~/Scripts/popper.js")}*@

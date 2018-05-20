@@ -22,10 +22,12 @@ namespace ZVV_Web_Lab_1.Controllers
             repository = new EFLabGWRepository(new ApplicationDbContext());
         }
 
-        public ActionResult List(int page = 1)
+        public ActionResult List(string group, int page = 1)
         {
-            IEnumerable<LabGlassware> lst = repository.GetAll().OrderBy(p => p.GW_Type);
-            return View(ZVV_Web_Lab_1.Models.PageListViewModel<LabGlassware>.CreatePage(lst, page, PageSize));
+            IEnumerable<LabGlassware> lst = repository
+                .GetAll().Where(d => group == null || d.GW_Type.Equals(group))
+                .OrderBy(d => d.GW_Price);
+            return View(Models.PageListViewModel<LabGlassware>.CreatePage(lst, page, PageSize));
         }
     }
 }
