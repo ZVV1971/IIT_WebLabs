@@ -2,7 +2,8 @@
 
 <div class='col-md-4'>
     <div class='thumbnail'>
-        <img height="200" resource='#' alt='NoImage' />
+        <img height="200" src="@Url.Action("GetImage", new {id=Model.GW_ID})"
+             alt='NoImage' class="img-thumbnail" />
         <div class="caption">
             <div class="item-name">
                 <h3>@Model.GW_Name</h3>

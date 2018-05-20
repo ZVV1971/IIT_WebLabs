@@ -54,6 +54,15 @@ namespace DAL_ZVV.Repositories
 
         public void Update(LabGlassware t)
         {
+            if (t.GW_Picture == null)
+            {
+                var lgw = context.LabGlasswares
+                    .AsNoTracking()
+                    .Where(d => d.GW_ID == t.GW_ID)
+                    .FirstOrDefault();
+                t.GW_Picture = lgw.GW_Picture;
+                t.GW_MIMEType = lgw.GW_MIMEType;
+            }
             context.Entry(t).State = EntityState.Modified;
             context.SaveChanges();
         }

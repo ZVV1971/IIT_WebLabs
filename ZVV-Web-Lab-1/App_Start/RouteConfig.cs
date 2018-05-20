@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace ZVV_Web_Lab_1
@@ -39,9 +35,45 @@ namespace ZVV_Web_Lab_1
             routes.MapRoute(
                 name: "", 
                 url: "catalog/{group}/page{page}", 
-                defaults: new { controller = "dish",
+                defaults: new { controller = "GW",
                                 action = "List" }, 
                                 constraints: new { page = @"\d+" });
+
+            routes.MapRoute(
+                name: "editing of wares",
+                url: "wares_edit",
+                defaults: new
+                {
+                    controller = "Admin",
+                    action = "Index"
+                });
+
+            routes.MapRoute(
+                name: "",
+                url: "wares_edit/{id}",
+                defaults: new
+                {
+                    controller = "Admin",
+                    action = "Edit"},
+                 constraints: new { id = @"\d+" });
+
+            routes.MapRoute(
+                name: "creating of wares",
+                url: "wares_new",
+                defaults: new
+                {
+                    controller = "Admin",
+                    action = "Create"
+                });
+
+            routes.MapRoute(
+                name: "deleting of wares",
+                url: "wares_delete",
+                defaults: new
+                {
+                    controller = "Admin",
+                    action = "Delete"
+                });
 
             routes.MapRoute(
                 name: "Default",

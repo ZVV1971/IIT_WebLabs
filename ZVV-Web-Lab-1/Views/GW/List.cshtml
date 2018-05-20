@@ -3,44 +3,14 @@
 
 @model ZVV_Web_Lab_1.Models.PageListViewModel<LabGlassware>
 
-@{
-    // объект для "собирания" разметки
-    StringBuilder result = new StringBuilder();
-    // счетчик эскизов в строке
-    var i = 0;
-    TagBuilder row = new TagBuilder("div");
-    foreach (LabGlassware item in Model)
-    {
+@{ ViewBag.Title = "List"; }
 
-        if (i % 3 == 0) // для первого элемента в строке создаем новую строку
-        {
-            row = new TagBuilder("div");
-            row.AddCssClass("row");
-            row.AddCssClass("item-row");
-        }
+<h2>List</h2>
 
-        i++;
+<div id="List">    
+    @Html.Partial("ListPartial", Model); 
+</div>
 
-        row.InnerHtml += Html.Partial("ItemViewPartial", item);
-        if (i % 3 == 0) // если строка закончена
-        {
-            // добавить строку в разметку
-            result.Append(row.ToString());
-        }
-
-    }
-    if (i != 3) // если последняя строка не заполнена
-    {
-        // добавить строку в разметку
-        result.Append(row.ToString());
-        // обнулить счетчик элементов в строке
-        i = 0;
-    }
-}
-<!-- Получить готовую разметку -->
-@MvcHtmlString.Create(result.ToString())
-@Html.Partial("PagerPartialView", Model)
-@section SidePanel { 
+@section SidePanel {
     @Html.Action("Side", "Menu")
-        } 
-@*@section Styles{ @Scripts.Render("~/Scripts/popper.js")}*@
+} 

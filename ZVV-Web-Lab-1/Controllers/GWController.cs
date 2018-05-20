@@ -4,6 +4,7 @@ using DAL_ZVV.Entities;
 using DAL_ZVV.Interfaces;
 using DAL_ZVV.Repositories;
 using System.Collections.Generic;
+using ZVV_Web_Lab_1.Models;
 
 namespace ZVV_Web_Lab_1.Controllers
 {
@@ -27,7 +28,23 @@ namespace ZVV_Web_Lab_1.Controllers
             IEnumerable<LabGlassware> lst = repository
                 .GetAll().Where(d => group == null || d.GW_Type.Equals(group))
                 .OrderBy(d => d.GW_Price);
-            return View(Models.PageListViewModel<LabGlassware>.CreatePage(lst, page, PageSize));
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ListPartial", 
+                    PageListViewModel<LabGlassware>.CreatePage(lst, page, PageSize));
+            }
+            return View(PageListViewModel<LabGlassware>.CreatePage(lst, page, PageSize));
+        }
+
+        [HttpGet]
+        public FileContentResult GetImage(int id)
+        {
+            LabGlassware lgw = repository.Get(id);
+            if (lgw != null)
+            {
+                return new FileContentResult(lgw.GW_Picture, lgw.GW_MIMEType);
+            }
+            else return null;
         }
     }
 }

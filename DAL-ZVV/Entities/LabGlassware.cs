@@ -23,8 +23,10 @@ namespace DAL_ZVV.Entities
         [Range(typeof(decimal),"0","10000")]
         public decimal GW_Price { get; set; }
 
+        [DataType(DataType.Upload)]
         public byte[] GW_Picture { get; set; }
 
+        [HiddenInput]
         public string GW_MIMEType { get; set; }
     }
 }

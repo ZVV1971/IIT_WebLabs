@@ -1,8 +1,51 @@
-﻿
+﻿@using DAL_ZVV.Entities
+@model IEnumerable<LabGlassware>
+
 @{
     ViewBag.Title = "Index";
-    ViewBag.LabNumber = "3";
 }
 
 <h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GW_Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GW_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GW_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GW_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GW_Price)
+        </td>
+        <td>
+            @Html.ActionLink("Удалить", "Delete", new { id = item.GW_ID })
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.GW_ID })
+        </td>
+    </tr>
+}
+
+</table>
