@@ -13,6 +13,7 @@ namespace DAL_ZVV.Entities
         [Display(Name ="Наименование", Description = "Наименование товара")]
         public string GW_Name { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Описание является обязательным полем!")]
         [Display(Name = "Описание", Description ="Описание предмета")]
         public string GW_Description { get; set; }
 

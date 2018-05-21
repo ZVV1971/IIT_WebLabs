@@ -30,22 +30,26 @@ namespace ZVV_Web_Lab_1.Controllers
         public ActionResult Edit(LabGlassware lgw,
              HttpPostedFileBase imageUpload = null)
         {
-            if (imageUpload != null)
+            if (ModelState.IsValid)
             {
-                int count = imageUpload.ContentLength;
-                lgw.GW_Picture = new byte[count];
-                imageUpload.InputStream.Read(lgw.GW_Picture, 0, count);
-                lgw.GW_MIMEType = imageUpload.ContentType;
+                if (imageUpload != null)
+                {
+                    int count = imageUpload.ContentLength;
+                    lgw.GW_Picture = new byte[count];
+                    imageUpload.InputStream.Read(lgw.GW_Picture, 0, count);
+                    lgw.GW_MIMEType = imageUpload.ContentType;
+                }
+                try
+                {
+                    repository.Update(lgw);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View(lgw);
+                }
             }
-            try
-            {
-                repository.Update(lgw);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View(lgw);
-            }
+            else return View(lgw);
         }
 
         [HttpGet]
@@ -58,22 +62,26 @@ namespace ZVV_Web_Lab_1.Controllers
         public ActionResult Create(LabGlassware lgw, 
             HttpPostedFileBase imageUpload = null)
         {
-            if (imageUpload != null)
+            if (ModelState.IsValid)
             {
-                int count = imageUpload.ContentLength;
-                lgw.GW_Picture = new byte[count];
-                imageUpload.InputStream.Read(lgw.GW_Picture, 0, count);
-                lgw.GW_MIMEType = imageUpload.ContentType;
+                if (imageUpload != null)
+                {
+                    int count = imageUpload.ContentLength;
+                    lgw.GW_Picture = new byte[count];
+                    imageUpload.InputStream.Read(lgw.GW_Picture, 0, count);
+                    lgw.GW_MIMEType = imageUpload.ContentType;
+                }
+                try
+                {
+                    repository.Create(lgw);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View(lgw);
+                }
             }
-            try
-            {
-                repository.Create(lgw);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View(lgw);
-            }
+            else return View(lgw);
         }
 
         [HttpGet]
