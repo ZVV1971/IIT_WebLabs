@@ -25,9 +25,11 @@ namespace DAL_ZVV.Entities
         [Display(Name = "Цена", Description = "Цена за единицу товара")]
         public decimal GW_Price { get; set; }
 
+        [ScaffoldColumn(false)]
         [DataType(DataType.Upload)]
         public byte[] GW_Picture { get; set; }
 
+        [ScaffoldColumn(false)]
         [HiddenInput]
         public string GW_MIMEType { get; set; }
     }
