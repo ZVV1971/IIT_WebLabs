@@ -92,6 +92,15 @@
     <Compile Include="Entities\LabGlassware.cs" />
     <Compile Include="Entities\LabGlasswareContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201805210547332_InitialCreate.cs" />
+    <Compile Include="Migrations\201805210547332_InitialCreate.Designer.cs">
+      <DependentUpon>201805210547332_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805210629296_test.cs" />
+    <Compile Include="Migrations\201805210629296_test.Designer.cs">
+      <DependentUpon>201805210629296_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFLabGWRepository.cs" />
   </ItemGroup>
@@ -155,6 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805210547332_InitialCreate.resx">
+      <DependentUpon>201805210547332_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805210629296_test.resx">
+      <DependentUpon>201805210629296_test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

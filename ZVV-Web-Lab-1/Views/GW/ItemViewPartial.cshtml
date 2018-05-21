@@ -2,8 +2,15 @@
 
 <div class='col-md-4'>
     <div class='thumbnail'>
-        <img height="200" src="@Url.Action("GetImage", new {id=Model.GW_ID})"
-             alt='NoImage' class="img-thumbnail" />
+        <div>
+            @if (Model.GW_Picture == null)
+                {<p>Нет изображения</p>}
+            else
+            {
+                <img width="150" height="150"
+                    src="@Url.Action("GetImage", "GW", new {id=Model.GW_ID })" class="img-thumbnail">
+            }
+        </div>
         <div class="caption">
             <div class="item-name">
                 <h3>@Model.GW_Name</h3>

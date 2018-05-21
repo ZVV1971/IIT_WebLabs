@@ -33,7 +33,7 @@ namespace DAL_ZVV.Entities
 
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new ApplicationDbContext("DefaultConnection");
         }
     }
 }
