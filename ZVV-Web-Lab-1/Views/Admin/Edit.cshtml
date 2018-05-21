@@ -2,16 +2,18 @@
 
 @{
     ViewBag.Title = "Редактирование";
+    ViewBag.LabNumber = "5";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Edit", "Admin",FormMethod.Post))
+@using (Html.BeginForm("Edit", "Admin",FormMethod.Post,
+        new { enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>LabGlassware</h4>
+    <h4>Стеклянная посуда</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.GW_ID)

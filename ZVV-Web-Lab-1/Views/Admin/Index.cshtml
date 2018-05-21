@@ -2,10 +2,11 @@
 @model IEnumerable<LabGlassware>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Список";
+    ViewBag.LabNumber = "5";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Добавить", "Create")

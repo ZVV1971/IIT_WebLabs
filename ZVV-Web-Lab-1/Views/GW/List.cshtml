@@ -3,9 +3,12 @@
 
 @model ZVV_Web_Lab_1.Models.PageListViewModel<LabGlassware>
 
-@{ ViewBag.Title = "List"; }
+@{ 
+    ViewBag.Title = "Список товаров";
+    ViewBag.LabNumber = "5";
+ }
 
-<h2>List</h2>
+<h2>@ViewBag.Title</h2>
 
 <div id="List">    
     @Html.Partial("ListPartial", Model); 

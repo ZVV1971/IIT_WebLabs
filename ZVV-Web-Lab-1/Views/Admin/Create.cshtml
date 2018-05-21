@@ -2,9 +2,10 @@
 
 @{
     ViewBag.Title = "Создать новый";
+    ViewBag.LabNumber = "5";
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Create", "Admin", FormMethod.Post,
         new { enctype = "multipart/form-data"}))
