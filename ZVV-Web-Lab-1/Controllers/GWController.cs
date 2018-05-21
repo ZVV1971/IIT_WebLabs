@@ -5,6 +5,7 @@ using DAL_ZVV.Interfaces;
 using DAL_ZVV.Repositories;
 using System.Collections.Generic;
 using ZVV_Web_Lab_1.Models;
+using System.Threading.Tasks;
 
 namespace ZVV_Web_Lab_1.Controllers
 {
@@ -37,9 +38,9 @@ namespace ZVV_Web_Lab_1.Controllers
         }
 
         [HttpGet]
-        public FileContentResult GetImage(int id)
+        public async Task<FileContentResult> GetImage(int id)
         {
-            LabGlassware lgw = repository.Get(id);
+            LabGlassware lgw = await repository.GetAsync(id);
             if (lgw != null)
             {
                 return new FileContentResult(lgw.GW_Picture, lgw.GW_MIMEType);
