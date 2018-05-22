@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ZVV_Web_Lab_1.Models.MenuItem>
+@{ ViewBag.LabNumber = "3";}
+
+<h6>Kарта сайта</h6>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Name, item.Action, (string)item.Controller)
+        </li>
+    }
+</ul> 

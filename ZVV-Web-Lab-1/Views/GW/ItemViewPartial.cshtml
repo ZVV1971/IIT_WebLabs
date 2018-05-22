@@ -1,0 +1,35 @@
+﻿@model DAL_ZVV.Entities.LabGlassware
+
+<div class='col-md-4'>
+    <div class='thumbnail'>
+        <div>
+            @if (Model.GW_Picture == null)
+                {<p>Нет изображения</p>}
+            else
+            {
+                <img width="150" height="150"
+                    src="@Url.Action("GetImage", "GW", new {id=Model.GW_ID })" class="img-thumbnail">
+            }
+        </div>
+        <div class="caption">
+            <div class="item-name">
+                <h3>@Model.GW_Name</h3>
+            </div>
+            <div class="item-description">
+                @Model.GW_Description
+            </div>
+            <div class="centered">
+                <h3 class="badge">@Model.GW_Price</h3>
+            </div>
+            <div class="centered">
+                <a href=@Url.Action("AddToCart", "Cart",
+                                new {id=Model.GW_ID, returnUrl=Request.Path} )
+                   class="btn btn-primary">
+                    <span class="glyphicon glyphicon-shoppingcart">
+                    </span>
+                    В корзину
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
