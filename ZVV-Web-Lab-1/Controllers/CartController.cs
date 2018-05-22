@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using DAL_ZVV.Entities;
 using DAL_ZVV.Interfaces;
 using ZVV_Web_Lab_1.Models;
+using DAL_ZVV.Repositories;
 
 namespace ZVV_Web_Lab_1.Controllers
 {
@@ -15,7 +16,7 @@ namespace ZVV_Web_Lab_1.Controllers
 
         public CartController()
         {
-            //repository = new IRepository<LabGlassware>();
+            repository = new EFLabGWRepository(new ApplicationDbContext());
         }
 
         public CartController(IRepository<LabGlassware> repo)
@@ -56,6 +57,12 @@ namespace ZVV_Web_Lab_1.Controllers
             LabGlassware lgw = repository.Get(id);
             if (lgw != null) GetCart().AddItem(lgw);
             return Redirect(returnUrl);
+        }
+
+        public PartialViewResult CartSummary(string returnUrl)
+        {
+            TempData["returnUrl"] = returnUrl;
+            return PartialView(GetCart());
         }
     }
 }

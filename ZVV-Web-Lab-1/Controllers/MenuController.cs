@@ -25,7 +25,8 @@ namespace ZVV_Web_Lab_1.Controllers
 
         public PartialViewResult Main(string a = "Index", string c = "Home")
         {
-            items.First(m => m.Controller == c).Active = "active";
+            MenuItem menuItem = items.FirstOrDefault(m => m.Controller == c);
+            if (menuItem != null) menuItem.Active = "active";
             return PartialView(items);
         }
 
