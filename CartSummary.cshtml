@@ -1,0 +1,16 @@
+﻿@model ZVV_Web_Lab_1.Models.Cart
+
+<div class="nav navbar-left">
+    <a href=@Url.Action("Login","Account") class="navbar-link">
+        <span class="glyphicon glyphicon-user"></span>Войти
+    </a>
+    <a href=@Url.Action("Register","Account") class="navbar-link">
+        <span class="glyphicon glyphicon-plus-sign"></span> Зарегистрироваться
+    </a>
+</div>
+<div class="nav navbar-right">
+    <a href=@Url.Action("Index","Cart",new {returnUrl=Request.Path })>
+        @Model.GetTotalSum() рублей ( @Model.GetItems().Sum(i => i.Quantity) )
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>

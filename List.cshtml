@@ -1,0 +1,19 @@
+﻿@using DAL_ZVV.Entities
+@using System.Text;
+
+@model ZVV_Web_Lab_1.Models.PageListViewModel<LabGlassware>
+
+@{ 
+    ViewBag.Title = "Список товаров";
+    ViewBag.LabNumber = "6";
+ }
+
+<h2>@ViewBag.Title</h2>
+
+<div id="List">    
+    @Html.Partial("ListPartial", Model); 
+</div>
+
+@section SidePanel {
+    @Html.Action("Side", "Menu")
+} 
