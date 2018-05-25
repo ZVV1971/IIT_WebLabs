@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201805211401549_Description made required field.Designer.cs">
       <DependentUpon>201805211401549_Description made required field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805251109406_NickName.cs" />
+    <Compile Include="Migrations\201805251109406_NickName.Designer.cs">
+      <DependentUpon>201805251109406_NickName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFLabGWRepository.cs" />
@@ -166,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805211401549_Description made required field.resx">
       <DependentUpon>201805211401549_Description made required field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805251109406_NickName.resx">
+      <DependentUpon>201805251109406_NickName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
