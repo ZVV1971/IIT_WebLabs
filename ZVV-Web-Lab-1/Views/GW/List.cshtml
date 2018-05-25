@@ -1,5 +1,4 @@
 ﻿@using DAL_ZVV.Entities
-@using System.Text;
 
 @model ZVV_Web_Lab_1.Models.PageListViewModel<LabGlassware>
 
@@ -11,7 +10,7 @@
 <h2>@ViewBag.Title</h2>
 
 <div id="List">    
-    @Html.Partial("ListPartial", Model); 
+    @Html.Partial("ListPartial", Model) 
 </div>
 
 @section SidePanel {
