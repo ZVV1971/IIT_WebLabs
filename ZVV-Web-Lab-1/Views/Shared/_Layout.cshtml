@@ -26,8 +26,7 @@
                     <a class="navbar-brand" href="#">Zakharenkov</a>
                 </div>
                 @Html.Action("Main", "Menu",
-                new { c = Request.RequestContext.RouteData.Values["controller"] }
-               )
+                    new { c = Request.RequestContext.RouteData.Values["controller"] })
             </div>
         </div><! --панель навигации (конец) -->
     </div>

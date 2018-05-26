@@ -6,7 +6,8 @@
         ClaimsIdentity identity = User.Identity as ClaimsIdentity;
         var nick = identity.Claims.Where(c => c.Type == "nick").Select(c => c.Value).SingleOrDefault();
 
-        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, 
+            new { id = "logoutForm" }))
         {
             @Html.AntiForgeryToken() 
             <span>Hello, @nick! </span> <a href="javascript:document.getElementById('logoutForm').submit()">

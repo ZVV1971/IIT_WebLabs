@@ -65,7 +65,7 @@ namespace ZVV_Web_Lab_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (imageUpload != null)
+                if (imageUpload != null && imageUpload.ContentLength < 100)
                 {
                     int count = imageUpload.ContentLength;
                     lgw.GW_Picture = new byte[count];
