@@ -6,6 +6,7 @@ using System.Web;
 
 namespace ZVV_Web_Lab_1.Controllers
 {
+    [Authorize(Roles ="admin")]
     public class AdminController : Controller
     {
         private IRepository<LabGlassware> repository;

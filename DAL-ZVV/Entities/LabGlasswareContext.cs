@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DAL_ZVV.Entities
 {
@@ -31,6 +33,23 @@ namespace DAL_ZVV.Entities
                 };
                 LabGlasswares.AddRange(gw);
                 SaveChanges();
+            }
+
+            if (!Roles.Any())
+            { // Создаем менеджеры ролей и пользователей 
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(this));
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this));
+
+                // Создаем роли "admin" и "user" 
+                roleManager.Create(new IdentityRole("admin"));
+                roleManager.Create(new IdentityRole("user"));
+
+                // Создаем пользователя 
+                var userAdmin = new ApplicationUser { Email = "admin@mail.ru", UserName = "admin@mail.ru", NickName = "SuperHero" };
+                userManager.CreateAsync(userAdmin, "123456").Wait();
+
+                // Добавляем созданного пользователя в администраторы 
+                userManager.AddToRole(userAdmin.Id, "admin"); 
             }
         }
     }

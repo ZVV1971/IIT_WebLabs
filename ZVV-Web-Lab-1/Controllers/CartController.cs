@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using DAL_ZVV.Entities;
 using DAL_ZVV.Interfaces;
 using ZVV_Web_Lab_1.Models;
@@ -40,6 +36,7 @@ namespace ZVV_Web_Lab_1.Controllers
         }
 
         // GET: Cart
+        [Authorize]
         public ActionResult Index(string returnUrl)
         {
             TempData["returnUrl"] = returnUrl;

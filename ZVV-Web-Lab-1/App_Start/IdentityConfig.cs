@@ -104,8 +104,8 @@ namespace ZVV_Web_Lab_1.App_Start
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options,
                 IOwinContext context)
         {
-           return new ApplicationRoleManager(new
-           RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+            return new ApplicationRoleManager(new
+            RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
         }
     }
 }
